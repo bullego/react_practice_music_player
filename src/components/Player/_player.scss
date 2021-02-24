@@ -1,0 +1,104 @@
+.player_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 20vh;
+}
+
+.time_control {
+	display: flex;
+	align-items: center;
+	width: 50%;
+
+	input {
+		width: 100%;
+		-webkit-appearance: none; //hide progress bar
+		background-color: transparent;
+		cursor: pointer;
+	}
+	p {
+		width: 100%;
+		text-align: left;
+		max-width: 4rem;
+		padding: 0.8rem;
+	}
+}
+
+.play_control {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 30%;
+	padding: 2rem 1rem;
+
+	svg {
+		cursor: pointer;
+	}
+}
+
+//customize input range
+input[type='range']:focus,
+input[type='range']:active {
+	outline: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none; //hide progress bar circle
+	width: 16px;
+	height: 16px;
+}
+
+input[type='range']::-moz-slider-thumb {
+	-webkit-appearance: none; //hide progress bar circle
+	width: 16px;
+	height: 16px;
+}
+
+.custom_track {
+	position: relative;
+	width: 100%;
+	height: 1rem;
+	background-color: red;
+	border-radius: 1rem;
+	overflow: hidden;
+}
+
+.animate_custom_track {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(204, 204, 204);
+	transform: translateX(0%);
+	pointer-events: none; //for possibility to control circle range
+}
+
+
+//adaptive
+@media screen and (max-width: 768px) {
+	.time_control {
+		width: 90%;
+		margin-top: 0.75rem;
+
+		p {
+			max-width: 3rem;
+			padding: 0.6rem;
+		}
+	}
+
+	.play_control {
+		width: 74%;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.time_control {
+		width: 86%;
+	}
+
+	.play_control {
+		width: 60%;
+	}
+}

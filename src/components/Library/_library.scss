@@ -1,0 +1,80 @@
+.library_container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 19rem;
+	height: 100%;
+	background-color: rosybrown;
+	box-shadow: 2px 2px 30px rgb(179, 178, 178);
+	overflow: scroll;
+	transform: translateX(-100%);
+	transition: all 0.5s ease;
+	opacity: 0;
+
+	h2 {
+		padding: 1.475rem 2rem;
+	}
+}
+
+.library_track {
+	display: flex;
+	align-items: center;
+	padding: 1rem 2rem 1rem 2rem;
+	cursor: pointer;
+	transition: background-color 0.5s ease;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color:wheat;
+	}
+
+	img {
+		width: 30%;
+	}
+}
+
+.track_desc {
+	margin-left: 1rem;
+
+	h3 {
+		font-size: 1rem;
+	}
+	h4 {
+		font-size: 0.75rem;
+		color:rgb(78, 78, 78)
+	}
+}
+
+*{
+	scrollbar-width: thin;
+	scrollbar-color: rgba(155,155,155,0.5) transparent;
+}
+*::-webkit-scrollbar {
+	height: 100%;
+	width: 5px;
+}
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
+	border: transparent;
+}
+
+.selected {
+	background-color: rgb(230, 205, 159);
+}
+.open_library {
+	transform: translateX(0%);
+	opacity: 1;
+}
+
+
+//adaptive
+@media screen and (max-width: 768px) {
+	.library_container {
+		width: 100%;
+	}
+}
